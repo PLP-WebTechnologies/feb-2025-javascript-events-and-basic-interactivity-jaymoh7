@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cocktail Explorer</h1>
+            <p>Find your perfect drink recipe</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="search">Search</button>
+            <button class="tab-btn" data-tab="favorites">Favorites</button>
+            <button class="tab-btn" data-tab="signup">Sign Up</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Search Tab -->
+            <div id="search" class="tab-pane active">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search cocktails (try 'margarita', 'mojito'...)">
+                    <button id="search-btn">Search</button>
+                </div>
+                
+                <div class="gallery-container">
+                    <button id="prev-btn" class="gallery-nav">❮</button>
+                    <div id="cocktail-gallery"></div>
+                    <button id="next-btn" class="gallery-nav">❯</button>
+                </div>
+                
+                <div id="cocktail-detail" class="hidden">
+                    <button id="back-btn">Back to Results</button>
+                    <div id="detail-content"></div>
+                    <button id="save-favorite" class="favorite-btn">Add to Favorites</button>
+                </div>
+            </div>
+
+            <!-- Favorites Tab -->
+            <div id="favorites" class="tab-pane">
+                <h2>Your Favorite Cocktails</h2>
+                <div id="favorites-list">
+                    <p class="empty-message">You haven't saved any favorites yet.</p>
+                </div>
+            </div>
+
+            <!-- Sign Up Tab -->
+            <div id="signup" class="tab-pane">
+                <h2>Create an Account</h2>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                        <span class="error-message" id="fullname-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                        <span class="error-message" id="password-error"></span>
+                    </div>
+
+                    <div class="password-requirements">
+                        <p>Password must contain:</p>
+                        <ul>
+                            <li id="length-check">At least 8 characters</li>
+                            <li id="uppercase-check">At least 1 uppercase letter</li>
+                            <li id="number-check">At least 1 number</li>
+                        </ul>
+                    </div>
+
+                    <button type="submit" id="submit-btn">Create Account</button>
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <p>Double-click anywhere for a surprise! | Press 'Esc' to clear searches</p>
+        </footer>
+    </div>
+
+    <div id="secret-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>You Found a Secret Recipe!</h2>
+            <div id="secret-recipe"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                      </html>
